@@ -1,46 +1,52 @@
 
 
-body { font-family:Georgia;
-       margin: 0;
-       padding: 0;
-       background-color: #d194faf1
-     }
-
-header { background-color: hsla(256, 79%, 74%, 0.445);
-         padding: 10px 0;
-         text-align: center;
-    }
-
-header nav ul { list-style: none; /* Elimina los puntos de la lista */
-                padding: 0; /* Elimina el padding */
-                margin: 0; /* Elimina el margin */
-                display: flex; /* Usa Flexbox para alinear horizontalmente */
-                justify-content: center; /* Centra horizontalmente los elementos */
+body { 
+    font-family: Georgia;
+    margin: 0;
+    padding: 0;
+    background-color: #d194faf1;
 }
 
-header nav ul li { margin: 0 15px; /* Espacio entre los elementos del menú */
+header { 
+    background-color: hsla(256, 79%, 74%, 0.445);
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul { 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Para manejar mejor el espacio en pantallas pequeñas */
+}
+
+header nav ul li { 
+    margin: 0 15px;
 }
 
 header nav ul li a {
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    color: #f2f1f3; /* Color del texto de los enlaces */
-    font-weight: bold; /* Fuente en negrita */
+    text-decoration: none;
+    color: #f2f1f3;
+    font-weight: bold;
+    padding: 10px; /* Mejora la interactividad en pantallas táctiles */
 }
 
 .hero {
-    background-image: url('code}.jpg'); /* Reemplaza con la ruta a tu imagen */
-    background-size:auto;
+    background-image: url('code}.jpg');
+    background-size: cover; /* Asegura que la imagen de fondo cubra toda la sección */
     background-position: center;
     color: rgba(179, 138, 245, 0.973);
     text-align: center;
     padding: 100px 20px;
 }
-
 .hero-content {
     background-color: rgba(0, 0, 0, 0.5);
     display: inline-block;
     padding: 20px;
     border-radius: 10px;
+    max-width: 90%; /* Limita el ancho máximo para mejorar la legibilidad en pantallas pequeñas */
 }
 
 h1 {
@@ -74,4 +80,47 @@ footer {
 footer p {
     margin: 0;
     color: #ffffff;
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .hero {
+        padding: 50px 10px;
+    }
+
+    .hero-content {
+        padding: 15px;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-content {
+        padding: 10px;
+        width: 100%; /* Asegura que el contenido se ajuste bien en pantallas muy pequeñas */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Menú en columna para pantallas muy pequeñas */
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
 }
